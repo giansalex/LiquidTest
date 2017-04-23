@@ -1,0 +1,17 @@
+﻿{%- assign foo = true -%}
+<Invoice>
+    <Products>
+        {%- for product in products -%}
+            <item>
+                <Id>{{ product.id }}</Id>
+                <Name>{{ product.name | upcase }}</Name>
+                <Price>{{ product.price | round : 2 }}</Price>
+            </item>
+        {%- endfor -%}
+    </Products>
+    {%- if foo == true -%}
+    <Company>
+        <Name>Imm Corp</Name>
+    </Company>
+    {%- endif -%}
+</Invoice>
